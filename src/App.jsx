@@ -5,36 +5,32 @@ import { useEffect, useState } from "react";
 import { queries } from "@testing-library/react";
 const App = () => {
   const url = "https://api.adviceslip.com/advice";
-  const [quote, setQuote] = useState(null);
+
   const [json, setJson] = useState(null);
 
   const fecthApi = async (url) => {
-    const response = await fetch(url);
-    console.log(response.status);
-    const responseJSON = await response.json();
-    console.log(responseJSON);
-    setJson(responseJSON);
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => setJson(data))
+      .catch((error) => console.log(error));
   };
 
-  const renderQuote = () => {
-    setQuote(json);
+  const renderQuote = (quotes) => {
+    fecthApi(url);
+    console.log(quotes);
   };
 
   useEffect(() => {
     fecthApi(url);
-
-    if (quote === null) {
-      renderQuote();
-    }
-  }, [quote]);
+  }, []);
 
   const module = (
     <main className="container">
       <label className="container_label">
-        Advice {quote === null ? "..." : quote.slip.id}
+        Advice {json === null ? "..." : json.slip.id}
       </label>
       <p className="container_paragraph">
-        {quote === null ? "..." : quote.slip.advice}
+        {json === null ? "..." : json.slip.advice}
       </p>
       <img className="container_imgDivider" src={icon_paternDivider_mobile} />
       <div className="container_divButton" onClick={renderQuote}>
