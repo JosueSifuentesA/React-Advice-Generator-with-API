@@ -32,7 +32,7 @@ const App = () => {
       <p className="container_paragraph">
         {json === null ? "..." : json.slip.advice}
       </p>
-      <img className="container_imgDivider" />
+      <div className="container_imgDivider" />
       <div className="container_divButton" onClick={renderQuote}>
         <img className="divButton_imgButton" src={icon_paternButton} />
       </div>
