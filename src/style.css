@@ -40,6 +40,9 @@ body {
   /*border: solid 1px red;*/
   background-color: hsl(217, 19%, 24%);
   width: 75%;
+  max-width: 700px;
+  max-height: 400px;
+  min-height: 250px;
   height: 55vh;
   padding: 30px;
   margin: 10% auto;
@@ -57,10 +60,11 @@ body {
 .container_imgDivider {
   margin: 3vh auto;
   width: 75vw;
+  max-width: 700px;
   position: relative;
-  top: 6vw;
+  top: 1vh;
   background-image: url("./assets/pattern-divider-desktop.svg");
-  height: 100px;
+  height: 10vh;
   background-size: contain;
   background-position-y: center;
   background-position-x: center;
@@ -106,7 +110,7 @@ body {
     border-radius: 50%;
 
     position: absolute;
-    bottom: 2vw;
+    bottom: 0px;
 
     left: 50%;
     transform: translateX(-50%);
@@ -115,6 +119,10 @@ body {
 }
 
 @media (max-width: 640px) {
+  .container {
+    min-height: 400px;
+    max-height: 400px;
+  }
   .container_divButton {
     background-color: var(--neonGreen);
     width: 25px;
