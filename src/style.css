@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
-
 :root {
   --lightCyan: hsl(193, 38%, 86%);
   --neonGreen: hsl(150, 100%, 66%);
@@ -43,7 +42,7 @@ body {
   width: 75%;
   height: 55vh;
   padding: 30px;
-  margin: 50% auto;
+  margin: 10% auto;
   border-radius: 10px;
   position: relative;
   text-align: justify;
@@ -51,9 +50,8 @@ body {
 
 .container_paragraph {
   margin: 4vh auto;
-  /*text-align: center;*/
+  text-align: center;
   font-size: 28px;
-  display: inline-block;
 }
 
 .container_imgDivider {
@@ -61,6 +59,12 @@ body {
   width: 75vw;
   position: relative;
   top: 6vw;
+  background-image: url("./assets/pattern-divider-desktop.svg");
+  height: 100px;
+  background-size: contain;
+  background-position-y: center;
+  background-position-x: center;
+  background-repeat: no-repeat;
 }
 
 .container_label {
@@ -94,6 +98,22 @@ body {
   padding: 1px;
 }
 
+@media (min-width: 1100px) {
+  .container_divButton {
+    background-color: var(--neonGreen);
+    width: 25px;
+    padding: 15px 20px 10px;
+    border-radius: 50%;
+
+    position: absolute;
+    bottom: 2vw;
+
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: -5%;
+  }
+}
+
 @media (max-width: 640px) {
   .container_divButton {
     background-color: var(--neonGreen);
@@ -116,6 +136,7 @@ body {
     width: 75vw;
     position: relative;
     top: 1vw;
+    background-image: url("./assets/pattern-divider-mobile.svg");
   }
 }
 
@@ -125,5 +146,6 @@ body {
     width: 75vw;
     position: relative;
     top: -5vw;
+    background-image: url("./assets/pattern-divider-mobile.svg");
   }
 }

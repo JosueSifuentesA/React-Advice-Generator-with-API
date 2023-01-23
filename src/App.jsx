@@ -27,12 +27,12 @@ const App = () => {
   const module = (
     <main className="container">
       <label className="container_label">
-        Advice {json === null ? "..." : json.slip.id}
+        {json === null ? "..." : `Advice ${json.slip.id}`}
       </label>
       <p className="container_paragraph">
         {json === null ? "..." : json.slip.advice}
       </p>
-      <img className="container_imgDivider" src={icon_paternDivider_mobile} />
+      <img className="container_imgDivider" />
       <div className="container_divButton" onClick={renderQuote}>
         <img className="divButton_imgButton" src={icon_paternButton} />
       </div>
