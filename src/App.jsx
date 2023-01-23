@@ -2,7 +2,7 @@ import icon_paternDivider_mobile from "./assets/pattern-divider-mobile.svg";
 import icon_paternButton from "./assets/icon-dice.svg";
 import "./style.css";
 import { useEffect, useState } from "react";
-import { queries } from "@testing-library/react";
+
 const App = () => {
   const url = "https://api.adviceslip.com/advice";
 
@@ -34,7 +34,11 @@ const App = () => {
       </p>
       <div className="container_imgDivider" />
       <div className="container_divButton" onClick={renderQuote}>
-        <img className="divButton_imgButton" src={icon_paternButton} />
+        <img
+          className="divButton_imgButton"
+          src={icon_paternButton}
+          alt="button"
+        />
       </div>
     </main>
   );
